@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    {% include 'common/head.html' %}
+</head>
+<body>
+   
+    {% include 'common/header.html' %}
+    
+    <div class="container wrap mb-4">
+        <div class="card mb-5 m-auto border  p-3 col-md " style="max-width: 1000px;">
+            
+            <table class="table">
+                <thead class="thead">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Pabellon</th>
+                    <th scope="col">Disponible</th>
+                    <th scope="col">Tipo de cirugia</th>
+                    <th scope="col">Doctor</th>
+                    <th scope="col">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Pabellon 1</td>
+                    <td>true /false</td>
+                    <td>vasectomia</td>
+                    <td>Fernanda Garcia</td>
+                    <td><a class="btn btn-primary" href={% url 'chequeoRecursos'%}>Validar</a></td>
+                  </tr>
+                </tbody>
+            </table>
+            
+
+
+        </div>
+        
+          
+          
+    </div>
+   
+
+
+    {% include 'common/footer.html' %}
+
+    {% include 'common/scripts.html' %}
+
+</body>
+</html>
