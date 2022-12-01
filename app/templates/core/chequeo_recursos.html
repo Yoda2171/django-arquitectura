@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+  {% load static %}
+  <head>
+    {% include 'common/head.html' %}
+  </head>
+  <body>
+    {% include 'common/header.html' %}
+    <div class="wrap mb-4">
+      <div class="card mb-3 m-auto border p-3 col-md" style="max-width: 1000px">
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a
+                class="list-group-item list-group-item-action"
+                id="list-home-list"
+                data-toggle="list"
+                data-target="#list-home"
+                role="tab"
+                aria-controls="home"
+              >
+                Infraestructura
+              </a>
+
+              <a
+                class="list-group-item list-group-item-action"
+                id="list-profile-list"
+                data-toggle="list"
+                data-target="#list-profile"
+                role="tab"
+                aria-controls="profile"
+              >
+                Recurso Humano
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                id="list-messages-list"
+                data-toggle="list"
+                data-target="#list-messages"
+                role="tab"
+                aria-controls="messages"
+              >
+                Insumos Especificos
+              </a>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div
+                class="tab-pane"
+                id="list-home"
+                role="tabpanel"
+                aria-labelledby="list-home-list"
+              >
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Articulo</th>
+                        <th scope="col">Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Camilla</td>
+                        <td>MALO</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm mt-4"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                  style="float: right"
+                >
+                  Informar Equipo Quirurgico
+                </button>
+
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          New message
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="recipient-name" class="col-form-label"
+                              >Recipient:</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="recipient-name"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="message-text" class="col-form-label"
+                              >Message:</label
+                            >
+                            <textarea
+                              class="form-control"
+                              id="message-text"
+                            ></textarea>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Send message
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane"
+                id="list-profile"
+                role="tabpanel"
+                aria-labelledby="list-profile-list"
+              >
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Recurso Humano</th>
+                        <th scope="col">Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Grupo 2</td>
+                        <td>Ocupao</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm mt-4"
+                  data-toggle="modal"
+                  data-target="#exampleModal2"
+                  style="float: right"
+                >
+                  Informar Equipo Quirurgico
+                </button>
+
+                <div
+                  class="modal fade"
+                  id="exampleModal2"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          New message
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="recipient-name" class="col-form-label"
+                              >Recipient:</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="recipient-name"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="message-text" class="col-form-label"
+                              >Message:</label
+                            >
+                            <textarea
+                              class="form-control"
+                              id="message-text"
+                            ></textarea>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Send message
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="list-messages"
+                role="tabpanel"
+                aria-labelledby="list-messages-list"
+              >
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Insumo</th>
+                      <th scope="col">Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>implantes</td>
+                      <td>MALO</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm mt-4"
+                  data-toggle="modal"
+                  data-target="#exampleModal3"
+                  style="float: right"
+                >
+                  Informar Equipo Quirurgico
+                </button>
+
+                <div
+                  class="modal fade"
+                  id="exampleModal3"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          New message
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="recipient-name" class="col-form-label"
+                              >Recipient:</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="recipient-name"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="message-text" class="col-form-label"
+                              >Message:</label
+                            >
+                            <textarea
+                              class="form-control"
+                              id="message-text"
+                            ></textarea>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Send message
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer mt-5">
+          <button class="btn btn-success" onclick="disponibilizar()">
+            Confimar pabellon
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {% include 'common/footer.html' %} {% include 'common/scripts.html' %}
+  </body>
+</html>
+<script>
+  function disponibilizar() {
+    Swal.fire({
+      icon: "success",
+      title: "Disponibilización confirmada",
+      confirmButtonText: "Aceptar",
+    }).then(() => {
+      location.href = "{% url 'preparacionPabellon'%}";
+    });
+  }
+</script>
