@@ -8,12 +8,17 @@
     {% include 'common/header.html' %}
 
     <div class="container wrap mb-4">
-      <form method="post"  action="{% url 'login' %}">
+      <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         <div
           class="card mb-5 m-auto border p-5 col-md"
           style="max-width: 750px"
         >
+          {% if form.errors %}
+          <div class="alert alert-danger">
+            <p>Tu usuario o constraseña estan incorrectos</p>
+          </div>
+          {% endif %}
           <div class="row no-gutters">
             <div class="col-md-4 text-center">
               <img src="{% static 'img/logo.jpg' %}" alt="..." />
@@ -21,7 +26,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h4 class="card-title mb-3">Ingreso de Usuarios</h4>
-                
+
                 <div class="input-group mb-3">
                   <input
                     name="username"
