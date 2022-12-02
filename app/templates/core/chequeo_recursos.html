@@ -12,7 +12,7 @@
           <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
               <a
-                class="list-group-item list-group-item-action"
+                class="list-group-item list-group-item-action active"
                 id="list-home-list"
                 data-toggle="list"
                 data-target="#list-home"
@@ -47,7 +47,7 @@
           <div class="col-8">
             <div class="tab-content" id="nav-tabContent">
               <div
-                class="tab-pane"
+                class="tab-pane fade show active"
                 id="list-home"
                 role="tabpanel"
                 aria-labelledby="list-home-list"
@@ -56,17 +56,17 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Articulo</th>
                         <th scope="col">Estado</th>
                       </tr>
                     </thead>
                     <tbody>
+                      {% for item in infraestructura%}
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Camilla</td>
-                        <td>MALO</td>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.estado}}</td>
                       </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -107,7 +107,7 @@
                         <form>
                           <div class="form-group">
                             <label for="recipient-name" class="col-form-label"
-                              >Recipient:</label
+                              >Asunto:</label
                             >
                             <input
                               type="text"
@@ -134,7 +134,7 @@
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="message()">
                           Send message
                         </button>
                       </div>
@@ -143,7 +143,7 @@
                 </div>
               </div>
               <div
-                class="tab-pane"
+                class="tab-pane fade"
                 id="list-profile"
                 role="tabpanel"
                 aria-labelledby="list-profile-list"
@@ -152,16 +152,12 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Recurso Humano</th>
                         <th scope="col">Estado</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Grupo 2</td>
-                        <td>Ocupao</td>
+                        <td>{{rrhh}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -203,7 +199,7 @@
                         <form>
                           <div class="form-group">
                             <label for="recipient-name" class="col-form-label"
-                              >Recipient:</label
+                              >Asunto:</label
                             >
                             <input
                               type="text"
@@ -230,7 +226,7 @@
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="message()">
                           Send message
                         </button>
                       </div>
@@ -244,24 +240,24 @@
                 role="tabpanel"
                 aria-labelledby="list-messages-list"
               >
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Insumo</th>
-                      <th scope="col">Estado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>implantes</td>
-                      <td>MALO</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Insumo</th>
+                        <th scope="col">Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for item in insumo%}
+                      <tr>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.estado}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
                 <button
                   type="button"
                   class="btn btn-primary btn-sm mt-4"
@@ -298,7 +294,7 @@
                         <form>
                           <div class="form-group">
                             <label for="recipient-name" class="col-form-label"
-                              >Recipient:</label
+                              >Asunto:</label
                             >
                             <input
                               type="text"
@@ -325,7 +321,7 @@
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="message()">
                           Send message
                         </button>
                       </div>
@@ -337,9 +333,11 @@
           </div>
         </div>
         <div class="card-footer mt-5">
+          {% if malInsumo == null or malInfraestructura == null or malRecursoHumano == null %}
           <button class="btn btn-success" onclick="disponibilizar()">
             Confimar pabellon
           </button>
+          {% endif%}
         </div>
       </div>
     </div>
@@ -354,7 +352,17 @@
       title: "Disponibilización confirmada",
       confirmButtonText: "Aceptar",
     }).then(() => {
-      location.href = "{% url 'preparacionPabellon'%}";
+      location.href = "{% url 'disponibilizarPabellon' id_pabellon %}";
+    });
+  }
+
+  function message() {
+    Swal.fire({
+      icon: "success",
+      title: "Mensaje enviado",
+      confirmButtonText: "Aceptar",
+    }).then(() => {
+      
     });
   }
 </script>

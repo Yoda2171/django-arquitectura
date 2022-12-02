@@ -16,21 +16,27 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Pabellon</th>
-                    <th scope="col">Disponible</th>
+                    <th scope="col">Estado</th>
                     <th scope="col">Tipo de cirugia</th>
                     <th scope="col">Doctor</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col"></th>
+                    
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  
+                    {% for item in pabellones%}
+                    <tr>
+
                     <th scope="row">1</th>
-                    <td>Pabellon 1</td>
-                    <td>true /false</td>
-                    <td>vasectomia</td>
-                    <td>Fernanda Garcia</td>
-                    <td><a class="btn btn-primary" href={% url 'chequeoRecursos'%}>Validar</a></td>
-                  </tr>
+                    <td>{{item.nombrePabellon}}</td>
+                    <td>{{item.disponible}}</td>
+                    <td>{{item.id_cirugia}}</td>
+                    <td>{{item.id_doctor}}</td>
+                    <td><a class="btn btn-primary btn-block btn-sm" href={% url 'chequeoRecursos' item.id_pabellon %}>Validar</a></td>
+                    </tr> 
+                    {% endfor %}
+                  
                 </tbody>
             </table>
             
