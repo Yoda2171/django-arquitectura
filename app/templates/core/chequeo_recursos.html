@@ -134,7 +134,7 @@
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="message()">
                           Send message
                         </button>
                       </div>
@@ -226,7 +226,7 @@
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="message()">
                           Send message
                         </button>
                       </div>
@@ -321,7 +321,7 @@
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="message()">
                           Send message
                         </button>
                       </div>
@@ -353,6 +353,16 @@
       confirmButtonText: "Aceptar",
     }).then(() => {
       location.href = "{% url 'disponibilizarPabellon' id_pabellon %}";
+    });
+  }
+
+  function message() {
+    Swal.fire({
+      icon: "success",
+      title: "Mensaje enviado",
+      confirmButtonText: "Aceptar",
+    }).then(() => {
+      
     });
   }
 </script>
