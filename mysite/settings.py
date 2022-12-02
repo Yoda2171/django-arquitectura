@@ -76,11 +76,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'xe',
+        'USER': 'c##django',
+        'PASSWORD': '1234',
+        'HOST': '',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -123,6 +126,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL='/preparacionpabellon'
-LOGOUT_REDIRECT_URL='/'
+
 LOGIN_URL="/"
+
+LOGOUT_REDIRECT_URL='/'
+
+LOGIN_FAILED_REDIRECT_URL="/"
+LOGIN_REDIRECT_URL='/preparacionpabellon'
