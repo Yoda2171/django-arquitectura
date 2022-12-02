@@ -333,7 +333,7 @@
           </div>
         </div>
         <div class="card-footer mt-5">
-          {% if malInsumo == null and malInfraestructura == null  %}
+          {% if malInsumo == null or malInfraestructura == null or malRecursoHumano == null %}
           <button class="btn btn-success" onclick="disponibilizar()">
             Confimar pabellon
           </button>

@@ -39,11 +39,12 @@ def chequeoRecursos(request , id):
     malInfraestructura= Pabellon.objects.get(id_pabellon=id).id_infraestructura.filter(estado='Malas')
     malInfraestructura= list(map(lambda infraestructura: infraestructura.serializer(), malInfraestructura))
 
-    malRecursoHumano =  Pabellon.objects.get(id_pabellon=id).id_recursohumano
+    malRecursoHumano = Pabellon.objects.get(id_pabellon=id).id_recursohumano.estado
+    
+        
 
-    print(malRecursoHumano)
-    if(len(malInfraestructura) != 0 or len(malInfraestructura) !=0 or malRecursoHumano =="No asignado"):
-        return render(request,'core/chequeo_recursos.html',{"malRecursoHumano":malRecursoHumano,"malInsumo":malInsumo,"malInfraestructura":malInfraestructura,"insumo":insumo,"pabellon":pabellon,"infraestructura":infraestructura,"rrhh":rrhh,"disponibilidad":disponibilidad,"id_pabellon":id_pabellon})
+    if(len(malInfraestructura) != 0 or len(malInsumo) !=0  or malRecursoHumano=="No asignado"):
+        return render(request,'core/chequeo_recursos.html',{"malInfraestructura":malInfraestructura,"malInsumo":malInsumo,"malRecursoHumano":[],"insumo":insumo,"pabellon":pabellon,"infraestructura":infraestructura,"rrhh":rrhh,"disponibilidad":disponibilidad,"id_pabellon":id_pabellon})
     else:
         return render(request,'core/chequeo_recursos.html',{"insumo":insumo,"pabellon":pabellon,"infraestructura":infraestructura,"rrhh":rrhh,"disponibilidad":disponibilidad,"id_pabellon":id_pabellon})
 
